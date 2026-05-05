@@ -1,0 +1,6 @@
+projectKey=fullstack-app
+serverUrl=http://54.208.221.222:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://54.208.221.222:9000/dashboard?id=fullstack-app
+ceTaskId=ee8e0e50-6dcd-4800-aa51-6855766d3458
+ceTaskUrl=http://54.208.221.222:9000/api/ce/task?id=ee8e0e50-6dcd-4800-aa51-6855766d3458
