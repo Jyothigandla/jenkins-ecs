@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/Jyothigandla/Jenkins-fullstack.git'
-            }
-        }
-
         stage('Build Images') {
             steps {
                 sh 'docker build -t backend ./backend'
@@ -24,7 +18,7 @@ pipeline {
 
         stage('Run Containers') {
             steps {
-                sh 'docker run -d -p 5000:5000 --name backend backend'
+                sh 'docker run -d -p 5000:3000 --name backend backend'
                 sh 'docker run -d -p 3000:80 --name frontend frontend'
             }
         }
