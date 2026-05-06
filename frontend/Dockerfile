@@ -1,11 +1,15 @@
-# Build stage
-FROM node:18 AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM node:18
 
-# Serve stage
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+ENV HOST=0.0.0.0
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
